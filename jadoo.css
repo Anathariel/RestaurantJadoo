@@ -1,0 +1,124 @@
+* {
+    text-decoration: none;
+}
+
+
+/*Styles Génériques*/
+
+h1,
+h2 {
+    font-family: 'volkhov-regular';
+}
+
+h1 {
+    font-size: 84px;
+    color: #fff;
+}
+
+h2 {
+    font-size: 50px;
+    color: #14183E;
+}
+
+h3 {
+    font-family: 'poppins-bold';
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-family: 'poppins-regular';
+    font-size: 18px;
+    color: #5E6282;
+    text-transform: uppercase;
+}
+
+h5 {
+    font-family: 'poppins-regular';
+    font-size: 16px;
+    color: #fff;
+}
+
+h6 {
+    font-family: 'poppins-bold';
+    font-size: 16px;
+}
+
+/*Font Family & Style*/
+
+
+.plan-title {
+    font-family: 'poppins-bold';
+}
+
+.arguments {
+    text-decoration: underline;
+}
+.arguments:last-child {
+    text-decoration: none;
+}
+
+.menu-bouton a:hover{
+    text-decoration: underline;
+}
+
+footer>p {
+    font-size: 14px;
+}
+
+figcaption,
+label,
+input,
+button,
+a,
+p{
+    font-family: 'poppins-regular';
+}
+
+/*Colors*/
+
+
+.texte-saumon {
+    color: #DF6951;
+}
+
+.texte-gris {
+    color: #BFC0CD;
+}
+
+.texte-gris2 {
+    color: #8D8D8D;
+}
+
+.texte-gris3 {
+    color: #3E3F43;
+}
+
+.texte-bleu {
+    color: #1E1D4C;
+}
+
+.texte-sombre {
+    color: #22232C;
+}
+
+.texte-noir {
+    color: #000;
+}
+
+button {
+    color: #fff;
+}
+
+figcaption {
+    color: #5E6282;
+}
+
+
+/* Header */
+
+#logo-complet {
+    margin: 0;
+    padding: 0;
+}
