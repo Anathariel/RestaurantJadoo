@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Jadoo : un voyage culinaire gourmet et gourmand</title>
     <link rel="stylesheet" href="./jadoo.css">
     <link rel="stylesheet" href="font.css">
-    <link rel="shortcut icon" type="image/ico" href="./img/logo_jadoo_1.svg">
+    <link rel="shortcut icon" type="image/ico" href="./img/favicon.ico">
 </head>
 
 <body>
@@ -27,7 +28,7 @@
             </ul>
         </nav>
     </header>
-    <section id="section 1">
+    <section id="section1">
         <h3 class="texte-saumon">Un voyage culinaire gourmet et gourmand.</h3>
         <h1>Bienvenue au restaurant Jadoo</h1>
         <h5 class="texte-gris">Jadoo vous accueille dans son ambiance zen et épurée, idéale pour découvrir ou
@@ -35,7 +36,7 @@
             gastronomique du Chef Junichi IIDA.</h5>
         <button>Découvrir la carte</button>
     </section>
-    <section id="section 2">
+    <section id="section2">
         <h4 class="texte-gris3">Découvrez</h4>
         <h2 class="texte-noir">Les nouveautés Jadoo</h2>
         <div id="conteneur-nouveautes">
@@ -84,7 +85,7 @@
                     <figure>
                         <img src="#" alt="">
                         <figcaption>
-                            <h6 class="texte-bleu",class="texte-poppins-bold">Ebi</h6>
+                            <h6 class="texte-bleu" ,class="texte-poppins-bold">Ebi</h6>
                             <p>Saumon, avocat et mayonnaise</p>
                         </figcaption>
                     </figure>
@@ -102,7 +103,7 @@
         </div>
         <button>Découvrir la carte</button>
     </section>
-    <section id="section 3">
+    <section id="section3">
         <div id="video">
             <button></button>
         </div>
@@ -121,7 +122,7 @@
             </figure>
         </div>
     </section>
-    <section id="section 4">
+    <section id="section4">
         <h4>Rapide et pratique</h4>
         <h2><span class="texte-saumon">Commandez</span> sur le site Jadoo</h2>
         <div id="commander">
@@ -154,33 +155,38 @@
             </div>
         </div>
     </section>
-    <section id="section 5">
+    <section id="formulaire" class="flexcol">
         <h4>Prendre rendez-vous</h4>
-        <h2 class="texte-noir">Contactez-nous pour réserver au restaurant</h2>
-        <div>
-            <h4>Formulaire de contact</h4>
-            <h5 class="texte-gris2">Remplissez le formulaire ci-dessous pour nous contacter</h5>
-            <form>
-                <div class="formulaire-contact">
-                    <label for="#">Nom</label>
-                    <input value="Nom">
-                </div>
-                <div class="formulaire-contact">
-                    <label for="#">Prénom</label>
-                    <input value="Prénom">
-                </div>
-                <div class="formulaire-contact">
-                    <label for="#">Adresse e-mail</label>
-                    <input value="monemail@gmail.com">
-                </div>
-                <div class="formulaire-contact">
-                    <label for="#">
-                        <label for="#">Message</label>
-                        <input value="Votre message/demande de réservation">
-                    </label>
-                </div>
-                <input type="submit" value="Envoyer">
-            </form>
+        <h2 class="texte-noir" id="RDV">Contactez-nous pour réserver au restaurant</h2>
+        <div class="flexcol" id="formbox">
+            <div id="formfill">
+                <h4>Formulaire de contact</h4>
+                <h5 class="texte-gris2">Remplissez le formulaire ci-dessous pour nous contacter</h5>
+                <form>
+                    <div class="flexrow">
+                        <div class="formulaire-contact">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" name="name" value="" required>
+                        </div>
+                        <div class="formulaire-contact">
+                            <label for="fname">Prénom</label>
+                            <input type="text" id="fname" name="fname" value="" required>
+                        </div>
+                    </div>
+                    <div class="formulaire-contact">
+                        <label for="#">Adresse e-mail</label>
+                        <input value="monemail@gmail.com" required>
+                    </div>
+                    <div class="formulaire-contact">
+                        <label for="#">
+                            <label for="#">Message</label>
+                            <input value="Votre message/demande de réservation" required>
+                        </label>
+                    </div>
+                    <input type="submit" value="Envoyer">
+                </form>
+            </div>
+            <figure class="flexcol"><img src="./img/illustration_formulaire.jpg" alt="Sushi" id="formillu"></figure>
         </div>
     </section>
     <footer>
