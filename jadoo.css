@@ -1,9 +1,23 @@
-* {
-    text-decoration: none;
+.flexcol {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+}
+
+.flexrow {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: space-between;
 }
 
 
-/*Styles Génériques*/
+            /*& Styles Textuels Génériques*/
 
 h1,
 h2 {
@@ -45,7 +59,7 @@ h6 {
     font-size: 16px;
 }
 
-/*Font Family & Style*/
+    /*~Font Family & Style*/
 
 
 .plan-title {
@@ -76,7 +90,7 @@ p{
     font-family: 'poppins-regular';
 }
 
-/*Colors*/
+    /*~Colors*/
 
 
 .texte-saumon {
@@ -116,9 +130,38 @@ figcaption {
 }
 
 
-/* Header */
+            /*& Header */
 
-#logo-complet {
+#logo-complet img {
     margin: 0;
-    padding: 0;
+    padding: 0 10px;
+}
+
+.formulaire-contact {
+    margin: 25px 15px;
+}
+
+            /*& Body */
+
+body {
+    background-color: #14183E;
+}
+            /*& Formulaire */
+
+#formulaire {
+    width: 100%;
+    padding: 100px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+
+#formbox {
+    width: 50%;
+    border-radius: 10px;
+    background: #8D8D8D;
+}
+
+#formillu {
+    width: 100%;
 }
