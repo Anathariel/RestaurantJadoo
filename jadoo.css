@@ -202,10 +202,6 @@ section {
     position: relative;
 }
 
-section article  {
-    max-width: 560px;
-}
-
     /*~ Intro */
 
 #intro {
@@ -214,13 +210,29 @@ section article  {
     height: 1000px;
 }
 
-#intro .souligne-texte-rose {
-    margin: 40px 0 20px;
-    background-position: 10px 95%;
+section article  {
+    max-width: 560px;
 }
 
 #souligne-rose {
     background: url(./img/souligne_rose.svg) no-repeat;
+    background-position: 0px 97%;
+}
+
+#intro article h5 {
+    line-height: 150%;
+    max-width: 460px;
+}
+
+#yellowbttn {
+    background-color: #f1a501;
+    color: #fff;
+    box-shadow: 0px 20px 35px 5px rgb(241 165 1 / 15%);
+    font: 18px Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
 }
 
             /*& Formulaire */
