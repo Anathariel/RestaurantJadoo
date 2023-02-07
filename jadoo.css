@@ -50,8 +50,8 @@ h3 {
 h4 {
     font-family: 'poppins-regular';
     font-size: 18px;
+    font-weight: 600;
     color: #5E6282;
-    text-transform: uppercase;
 }
 
 h5 {
@@ -73,11 +73,11 @@ h6 {
     font-size: 21px;
 }
 
-.arguments {
+.argument {
     text-decoration: underline;
 }
 
-.arguments:last-child {
+.argument:last-child {
     text-decoration: none;
 }
 
@@ -131,6 +131,10 @@ p {
 
 .texte-gris-bleu {
     color: #5e6282;
+}
+
+.texte-poppins-bold {
+    font-weight: bolder;
 }
 
 figcaption {
@@ -197,7 +201,6 @@ body {
 }
 
 section {
-    display: block;
     padding: 100px 0 100px 150px;
     position: relative;
 }
@@ -224,7 +227,7 @@ section article  {
     max-width: 460px;
 }
 
-#yellowbttn {
+.yellowbttn {
     background-color: #f1a501;
     color: #fff;
     box-shadow: 0px 20px 35px 5px rgb(241 165 1 / 15%);
@@ -233,6 +236,101 @@ section article  {
     padding: 15px 20px;
     border: none;
     cursor: pointer;
+}
+
+    /*~ Carte */
+
+#carte {
+    display: block;
+    text-align: center;
+    background: url(./img/decor_1.svg) no-repeat #ffffff;
+    background-position: 98% 2%;
+}
+
+.carte {
+    margin: 20px;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 320px;
+    border-radius: 24px;
+    box-shadow: 0px 4px 32px 5px rgb(0 0 0 / 5%);
+}
+
+.conteneur-carte {
+    margin: 0 0 50px;
+}
+
+.carte figure {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    border-radius: 24px;
+    background-color: #fff;
+}
+
+.carte img {
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+}
+
+.carte figcaption {
+    text-align: center;
+    line-height: 28px;
+    font-size: 18px;
+    padding: 20px;
+}
+
+#conteneur-maki .carte:not(:hover) {
+    box-shadow: none;
+    background-color: transparent;
+}
+
+#conteneur-maki .carte {
+    width: 267px;
+}
+
+            /*& Commandes */
+
+#commandes {
+    background: url(./img/illustration_commander.jpg) no-repeat;
+    background-size: cover;
+}
+.conteneur-elements {
+    text-align: left;
+}
+
+#commandes article {
+    max-width: 550px;
+    text-align: left;
+}
+
+.conteneur-arguments {
+    margin-bottom: 50px;
+}
+
+.argument figcaption {
+    display: block;
+    width: 300px;
+}
+
+.argument img, .argument figcaption {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.conteneur-arguments figure {
+    margin: 0;
+}
+
+.conteneur-arguments .argument figcaption {
+    margin: 0 0 0 20px;
+    padding: 0 20px 0 0;
+}
+
+.conteneur-arguments .argument img {
+    width: 60px;
+    height: 60px;
 }
 
             /*& Formulaire */
@@ -298,14 +396,20 @@ section article  {
             /*& Footer */
 
 footer {
-    display: block;
     background-color: #f3f3f3;
     padding: 70px 10% 20px;
 }
 
+footer section {
+    padding: 0;
+}
+
 #conteneur-foot {
     text-align: center;
+}
 
+footer .footer-part:not(:last-child) {
+    margin-right: 10%;
 }
 
 footer .footer-part {
@@ -313,17 +417,26 @@ footer .footer-part {
     vertical-align: top;
     text-align: left;
     margin-bottom: 50px;
-    margin-right: 10%;
 }
 
-.logo-foot {
-    margin-right: 5%;
+.footer-logo .logo {
     margin: 0;
-    text-align: left;
+    display: block;
 }
 
-.logo-foot img {
-    height: 60px;
+.logo {
+    height: 100%;
+    display: inline-block;
+    margin-left: 150px;
+    vertical-align: middle;
+}
+
+.footer-logo .logo img {
+    height: 50px;
+}
+
+.logo img:first-child {
+    margin-right: 20px;
 }
 
 footer p {
@@ -346,11 +459,23 @@ footer p {
     display: inline-block;
     background-color: #000;
     border: none;
-    padding: 10px 15px;
-    border-radius: 15px;
-    font-size: 10px;
+    border-radius: 30px;
     color: #fff;
     cursor: pointer;
+    font: 18px Arial, Helvetica, sans-serif;
+}
+
+#foot-uber .dl-button img {
+    margin: 0 10px 0 0;
+}
+
+#foot-uber .dl-button * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.dl-button p {
+    font-size: 10px;
 }
 
 #copyright {
