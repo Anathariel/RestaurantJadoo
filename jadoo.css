@@ -77,16 +77,12 @@ h6 {
     text-decoration: underline;
 }
 
-.argument:last-child {
-    text-decoration: none;
-}
-
 .menu-bouton a:hover {
     text-decoration: underline;
 }
 
-footer>p {
-    font-size: 14px;
+footer #plan-site a:hover {
+    text-decoration: underline;
 }
 
 figcaption,
@@ -96,6 +92,11 @@ button,
 a,
 p {
     font-family: 'poppins-regular';
+    text-align: left;
+}
+
+.texte-poppins-bold {
+    font-weight: bolder;
 }
 
         /*~Colors*/
@@ -133,16 +134,8 @@ p {
     color: #5e6282;
 }
 
-.texte-poppins-bold {
-    font-weight: bolder;
-}
 
-figcaption {
-    color: #5E6282;
-}
-
-
-            /*& Header */
+                /*& Header */
 
 
 header {
@@ -181,9 +174,7 @@ header nav ul li {
 .logo {
     height: 100%;
     display: inline-block;
-    margin-left: 150px;
     margin: 0;
-    padding: 0 5%;
 }
 
 .logo img {
@@ -192,7 +183,7 @@ header nav ul li {
     max-height: 100%;
 }
 
-            /*& Body */
+                /*& Body */
 
 body {
     height: 100%;
@@ -204,6 +195,9 @@ section {
     padding: 100px 0 100px 150px;
     position: relative;
 }
+
+.souligne-rose {
+    background: url(./img/souligne_rose.svg) no-repeat;}
 
     /*~ Intro */
 
@@ -217,7 +211,7 @@ section article  {
     max-width: 560px;
 }
 
-#souligne-rose {
+#intro .souligne-rose {
     background: url(./img/souligne_rose.svg) no-repeat;
     background-position: 0px 97%;
 }
@@ -232,10 +226,14 @@ section article  {
     color: #fff;
     box-shadow: 0px 20px 35px 5px rgb(241 165 1 / 15%);
     font: 18px Arial, Helvetica, sans-serif;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 15px 20px;
     border: none;
     cursor: pointer;
+}
+
+.yellowbttn:hover {
+    background-color: #f1a501e2;
 }
 
     /*~ Carte */
@@ -249,7 +247,6 @@ section article  {
 
 .carte {
     margin: 20px;
-    position: relative;
     display: inline-block;
     vertical-align: top;
     width: 320px;
@@ -281,18 +278,88 @@ section article  {
     padding: 20px;
 }
 
+#conteneur-maki .carte {
+    width: 267px;
+}
+
 #conteneur-maki .carte:not(:hover) {
     box-shadow: none;
     background-color: transparent;
 }
 
-#conteneur-maki .carte {
-    width: 267px;
+/*& Vidéo Présentation*/
+
+#presentation {
+    padding-bottom: 426px;
+    background: url(./img/illustration_chef.jpg) no-repeat;
+    background-size: cover;
 }
 
-            /*& Commandes */
+#presentation #video {
+    position: relative;
+    width: 300px;
+    height: 165px;
+    border-radius: 15px;
+}
+
+#presentation #video img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+#presentation #video-play {
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    margin-left: -38.5px;
+    margin-top: -38.5px;
+    width: 77px;
+    height: 77px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#presentation article {
+    max-width: 650px;
+}
+
+.conteneur-images {
+    position: absolute;
+    height: 652px;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    bottom: -326px;
+}
+
+.conteneur-images figure {
+    display: inline-block;
+    margin: 0;
+    width: 500px;
+    height: 100%;
+}
+
+.conteneur-images figure img {
+    width: 100%;
+    height: 100%;
+}
+
+#presentation .souligne-rose {
+    margin: 100px 0 40px;
+    background-position: -10px 20%;
+}
+
+#presentation h5 {
+    max-width: 460px;
+}
+
+
+                /*& Commandes */
 
 #commandes {
+    padding-top: 425px;
     background: url(./img/illustration_commander.jpg) no-repeat;
     background-size: cover;
 }
@@ -353,7 +420,6 @@ section article  {
 
 #formleft {
     display: table-cell;
-    text-align: center;
     padding: 50px;
     width: 50%;
 }
@@ -387,6 +453,10 @@ section article  {
     border: none;
     cursor: pointer;
     padding: 15px 25px;
+}
+
+.bouton:hover {
+    background-color: #007bffd5;
 }
 
 .formulaire-contact {
@@ -459,14 +529,10 @@ footer p {
     display: inline-block;
     background-color: #000;
     border: none;
-    border-radius: 30px;
+    padding: 0 1rem;
+    border-radius: 25px;
     color: #fff;
     cursor: pointer;
-    font: 18px Arial, Helvetica, sans-serif;
-}
-
-#foot-uber .dl-button img {
-    margin: 0 10px 0 0;
 }
 
 #foot-uber .dl-button * {
@@ -482,4 +548,8 @@ footer p {
     margin: 0;
     text-align: center;
     font-size: 14px;
+}
+
+.dl-button:hover {
+    background-color: #000000cc; 
 }
