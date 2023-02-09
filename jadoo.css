@@ -4,10 +4,10 @@
     list-style: none;
 }
 
-
 .flexcol {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     align-content: space-evenly;
@@ -16,6 +16,7 @@
 .flexrow {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     align-content: space-evenly;
@@ -44,7 +45,6 @@ h3 {
     font-family: 'poppins-bold';
     font-size: 20px;
     color: #fff;
-    text-transform: uppercase;
 }
 
 h4 {
@@ -52,11 +52,11 @@ h4 {
     font-size: 18px;
     font-weight: 600;
     color: #5E6282;
+    margin-bottom: 10px;
 }
 
 h5 {
-    font-family: 'poppins-regular';
-    font-size: 14px;
+    font: 500 16px/30px "poppins-regular";
     color: #fff;
 }
 
@@ -73,8 +73,16 @@ h6 {
     font-size: 21px;
 }
 
+.plan-title:not(:last-child) {
+    margin: 0 0 20px;
+}
+
 .argument {
     text-decoration: underline;
+}
+
+.uppercase { 
+    text-transform: uppercase;
 }
 
 .menu-bouton a:hover {
@@ -92,11 +100,17 @@ button,
 a,
 p {
     font-family: 'poppins-regular';
+    font-weight: 500;
+    font-style: normal;
     text-align: left;
 }
 
 .texte-poppins-bold {
     font-weight: bolder;
+}
+
+.texte-volkhov-bold {
+    font-family: "volkhov-bold";
 }
 
         /*~Colors*/
@@ -135,10 +149,15 @@ p {
 }
 
 
+.souligne-rose {
+    background: url(./img/souligne_rose.svg) no-repeat;}
+
+
                 /*& Header */
 
 
 header {
+    display:flex;
     background-color: #fff;
     width: 100%;
     height: 70px;
@@ -146,27 +165,40 @@ header {
     z-index: 5;
     top: 0;
     padding: 20px 0;
+    transition: all 0.2s ease-in-out;
 }
 
-        /*~ Menu */
+        /*~ Menu Navigation */
 
 header nav {
-    float: right;
     height: 100%;
-    margin-right: 150px;
+    margin-right: 8%;
+    transition: all 0.2s ease-in-out;
 }
 
 header nav ul {
-    display: table;
-    padding: 0;
+    display: flex;
+    align-items: center;
     margin: 0;
     height: 100%;
-    border-spacing: 30px 0;
 }
 
-header nav ul li {
-    display: table-cell;
-    vertical-align: middle;
+header .logo {
+    margin-left: 8%;
+    margin-right: auto;
+    transition: all 0.2s ease-in-out;
+}
+
+header nav ul li a {
+    font-size: 17px;
+}
+
+header nav ul li:not(:last-child) {
+    margin-right: 30px;
+}
+
+header .burger {
+    display: none;
 }
 
     /*~ Logo */
@@ -178,17 +210,48 @@ header nav ul li {
 }
 
 .logo img {
-    margin-right: 20px;
-    height: 35px;
     max-height: 100%;
 }
 
-                /*& Body */
+.logo img:first-child {
+    margin-right: 20px;
+}
+
+.logo:hover img:first-child {
+    animation: logo-animation 0.5s ease-in;
+    margin-right: 20px;
+}
+
+@keyframes logo-animation {
+    20% {
+        transform: rotate(15deg);
+    }
+
+    40% {
+        transform: rotate(-10deg);
+    }
+
+    60% {
+        transform: rotate(5deg);
+    }
+
+    80% {
+        transform: rotate(-5deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+
+
+                /*& Body Général */
 
 body {
-    height: 100%;
     width: 100%;
     margin: 0 auto;
+    font-size: 16px;
 }
 
 section {
@@ -196,30 +259,11 @@ section {
     position: relative;
 }
 
-.souligne-rose {
-    background: url(./img/souligne_rose.svg) no-repeat;}
-
-    /*~ Intro */
-
-#intro {
-    background: url(./img/illustration_principale.jpg) no-repeat;
-    background-size: cover;
-    height: 1000px;
-}
-
 section article  {
     max-width: 560px;
 }
 
-#intro .souligne-rose {
-    background: url(./img/souligne_rose.svg) no-repeat;
-    background-position: 0px 97%;
-}
-
-#intro article h5 {
-    line-height: 150%;
-    max-width: 460px;
-}
+                /*& Buttons */
 
 .yellowbttn {
     background-color: #f1a501;
@@ -236,6 +280,45 @@ section article  {
     background-color: #f1a501e2;
 }
 
+.dl-button {
+    display: inline-block;
+    background-color: #000;
+    border: none;
+    padding: 0 1rem;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#foot-uber .dl-button * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.dl-button p {
+    font-size: 10px;
+}
+
+.dl-button:hover {
+    background-color: #000000cc; 
+}
+
+    /*~ Intro */
+
+#intro {
+    background: url(./img/illustration_principale.jpg) no-repeat;
+    background-size: cover;
+}
+
+#intro .souligne-rose {
+    margin: 40px 0 20px;
+    background-position: 10px 95%;
+}
+
+#intro article h5 {
+    max-width: 460px;
+}
+
     /*~ Carte */
 
 #carte {
@@ -245,8 +328,16 @@ section article  {
     background-position: 98% 2%;
 }
 
+.conteneur-carte {
+    margin: 0 0 50px;
+}
+
+.title-box {
+    display: block;
+}
+
 .carte {
-    margin: 20px;
+    margin-bottom: 50px;
     display: inline-block;
     vertical-align: top;
     width: 320px;
@@ -254,9 +345,15 @@ section article  {
     box-shadow: 0px 4px 32px 5px rgb(0 0 0 / 5%);
 }
 
-.conteneur-carte {
-    margin: 0 0 50px;
-}
+#conteneur-nouveautes .carte:last-child::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: -10px;
+    bottom: 0;
+    background: url("./img/decoration_filet.svg") no-repeat;
+    background-position: 80% 30%;}
 
 .carte figure {
     position: relative;
@@ -293,9 +390,15 @@ section article  {
     padding-bottom: 426px;
     background: url(./img/illustration_chef.jpg) no-repeat;
     background-size: cover;
+    overflow: visible;
+}
+
+#presentation article {
+    max-width: 650px;
 }
 
 #presentation #video {
+    display: flex;
     position: relative;
     width: 300px;
     height: 165px;
@@ -305,6 +408,10 @@ section article  {
 #presentation #video img {
     max-width: 100%;
     border-radius: 15px;
+}
+
+#video:hover img {
+    opacity: 0.9;
 }
 
 #presentation #video-play {
@@ -319,10 +426,6 @@ section article  {
     background: #fff;
     border-radius: 50%;
     cursor: pointer;
-}
-
-#presentation article {
-    max-width: 650px;
 }
 
 .conteneur-images {
@@ -348,7 +451,7 @@ section article  {
 
 #presentation .souligne-rose {
     margin: 100px 0 40px;
-    background-position: -10px 20%;
+    background-position: -5px 18%;
 }
 
 #presentation h5 {
@@ -362,9 +465,6 @@ section article  {
     padding-top: 425px;
     background: url(./img/illustration_commander.jpg) no-repeat;
     background-size: cover;
-}
-.conteneur-elements {
-    text-align: left;
 }
 
 #commandes article {
@@ -465,14 +565,23 @@ section article  {
 
             /*& Footer */
 
+/*~ General*/
+
 footer {
     background-color: #f3f3f3;
-    padding: 70px 10% 20px;
+    padding: 70px 8% 20px;
+}
+
+footer p {
+    line-height: 25px;
+    font-size: 15px;
 }
 
 footer section {
     padding: 0;
 }
+
+/*~ Conteneurs*/
 
 #conteneur-foot {
     text-align: center;
@@ -484,21 +593,17 @@ footer .footer-part:not(:last-child) {
 
 footer .footer-part {
     display: inline-block;
-    vertical-align: top;
-    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px 0 20px;
     margin-bottom: 50px;
 }
+
+/*~ Logo*/
 
 .footer-logo .logo {
     margin: 0;
     display: block;
-}
-
-.logo {
-    height: 100%;
-    display: inline-block;
-    margin-left: 150px;
-    vertical-align: middle;
 }
 
 .footer-logo .logo img {
@@ -509,10 +614,7 @@ footer .footer-part {
     margin-right: 20px;
 }
 
-footer p {
-    line-height: 25px;
-    font-size: 18px;
-}
+/*~ copyright elem*/
 
 .plan-restau {
     display: inline-block;
@@ -525,31 +627,388 @@ footer p {
     margin: 20px 50px;
 }
 
-.dl-button {
-    display: inline-block;
-    background-color: #000;
-    border: none;
-    padding: 0 1rem;
-    border-radius: 25px;
-    color: #fff;
-    cursor: pointer;
-}
 
-#foot-uber .dl-button * {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.dl-button p {
-    font-size: 10px;
-}
 
 #copyright {
     margin: 0;
     text-align: center;
     font-size: 14px;
+    font-weight: 500;
 }
 
-.dl-button:hover {
-    background-color: #000000cc; 
+
+/* ---------- */
+/* Responsive */
+/* ---------- */
+
+/* Ordinateur */
+
+@media (max-width: 1600px) {
+    #presentation::after {
+        background-position-x: 40%;
+    }
 }
+
+@media (max-width: 1200px) {
+    #presentation::after {
+        background-position-x: 50%;
+    }
+}
+
+/* Tablette */
+
+@media (max-width: 768px) {
+    #carte {
+        background: #ffffff;
+    }
+}
+
+@media (max-width: 1024px) {
+    html,
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 74px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    header nav ul li {
+        display: none;
+    }
+
+    header .logo {
+        margin-left: 5%;
+    }
+
+    header nav {
+        margin-right: 5%;
+    }
+
+    header .burger {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    footer,
+    section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    footer .footer-part,
+    footer .footer-part * {
+        text-align: center;
+    }
+
+    footer #plan-site .footer-part * {
+        text-align: left;
+    }
+
+    #intro .souligne-texte-rose {
+        background-position: 0px 95%;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 656px) {
+    h1 {
+        font-size: 45px;
+    }
+
+    .conteneur-images {
+        position: relative;
+        height: auto;
+        width: 100%;
+        z-index: initial;
+        left: initial;
+        bottom: initial;
+    }
+
+    .conteneur-images .mobile-illustration,
+    .conteneur-images figure {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+    }
+
+    .conteneur-images figure img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .conteneur-arguments {
+        text-align: left;
+    }
+
+    .formcontainer {
+        box-shadow: none;
+    }
+
+    .formright {
+        display: none;
+    }
+
+    .formleft {
+        width: 100%;
+        padding: 0;
+    }
+
+    .formleft h4,
+    .formleft h5 {
+        text-align: center;
+    }
+
+    .formulaire-contact {
+        display: block;
+        width: 100%;
+    }
+
+    .formulaire-contact:not(:last-child) {
+        padding: 0;
+    }
+
+    footer,
+    section,
+    #formulaire {
+        padding-top: 8%;
+        padding-bottom: 8%;
+    }
+
+    section article {
+        width: 100%;
+        text-align: center;
+        max-width: initial;
+    }
+
+    #formulaire article,
+    section article h5 {
+        max-width: initial;
+    }
+
+    #intro .souligne-texte-rose {
+        background-position: 55% 95%;
+        background-size: 55%;
+    }
+
+    #presentation {
+        padding: 0;
+    }
+
+    #presentation .souligne-texte-rose {
+        background-position: 35% 18%;
+    }
+
+    #presentation #video {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+
+    #presentation #video > img {
+        flex: 1;
+        max-width: 100%;
+        border-radius: 0;
+    }
+
+    #presentation .video-play {
+        width: 20vw;
+        height: 20vw;
+    }
+
+    #presentation .video-play > img {
+        width: 18vw;
+        height: 18vw;
+    }
+
+    #presentation article {
+        display: none;
+    }
+
+    #presentation::after,
+    #commandes::after {
+        background: #ffffff;
+    }
+    #commandes .conteneur-elements {
+        justify-content: center;
+    }
+
+    #conteneur-nouveautes {
+        height: 500px;
+    }
+
+    #conteneur-nouveautes .conteneur-carte {
+        position: relative;
+        height: 100%;
+        margin: 0;
+    }
+
+    #conteneur-nouveautes .carte {
+        position: absolute;
+        opacity: 0;
+        margin: 0;
+    }
+
+    #conteneur-nouveautes .carte::before {
+        display: none;
+    }
+
+    #conteneur-nouveautes .carte:nth-child(1) {
+        animation: animation-carte-1 19.5s 0s infinite;
+    }
+
+    #conteneur-nouveautes .carte:nth-child(2) {
+        animation: animation-carte-2 19.5s 0s infinite;
+    }
+
+    #conteneur-nouveautes .carte:nth-child(3) {
+        animation: animation-carte-3 19.5s 0s infinite;
+    }
+
+    #conteneur-maki .conteneur-carte {
+        display: block;
+    }
+
+    #conteneur-maki .carte {
+        display: block;
+        width: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    #conteneur-maki .carte:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    #conteneur-maki .carte figure figcaption,
+    #conteneur-maki .carte figure {
+        display: flex;
+        align-items: center;
+    }
+
+    #conteneur-maki .carte figure figcaption,
+    #conteneur-maki .carte figure figcaption p {
+        text-align: left;
+    }
+
+    #conteneur-maki .carte figure figcaption {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-right: 0;
+    }
+
+    #conteneur-maki .carte figure figcaption p {
+        margin: 0;
+    }
+
+    #conteneur-maki .carte figure figcaption p:first-child {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    #conteneur-maki .carte figure img {
+        max-width: 110px;
+        max-height: 110px;
+    }
+
+    #conteneur-maki .carte::before,
+    #conteneur-maki .carte::after {
+        display: none;
+    }
+
+    @keyframes animation-carte-1 {
+        0% {
+            opacity: 0;
+            transform: translateX(50%);
+        }
+
+        2.25% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        33% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        35.25% {
+            opacity: 0;
+            transform: translateX(-50%);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateX(-50%);
+        }
+    }
+
+    @keyframes animation-carte-2 {
+        0% {
+            opacity: 0;
+            transform: translateX(50%);
+        }
+
+        35.25% {
+            opacity: 0;
+            transform: translateX(50%);
+        }
+
+        37.5% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        66% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        68.25% {
+            opacity: 0;
+            transform: translateX(-50%);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateX(-50%);
+        }
+    }
+
+    @keyframes animation-carte-3 {
+        0% {
+            opacity: 0;
+            transform: translateX(50%);
+        }
+
+        68.25% {
+            opacity: 0;
+            transform: translateX(50%);
+        }
+
+        70.5% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        97.75% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateX(-50%);
+        }
+    }
+}
+
